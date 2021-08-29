@@ -1,0 +1,11 @@
+﻿
+
+It is just a concept of connecting different compoents through abstraction 
+abstraction can be achieved by using either an interface or by using an abstract class
+It prevents making cartesian product complexity explosion
+(Like suppose I have two type of work and I have 3 system , So ultimately I need to create 2*3 class to implement the system in a way.This is known as cartesian product)
+
+
+
+So bridge is a mechanism that decouples interface hierarchy from an implementations hierarchy
+

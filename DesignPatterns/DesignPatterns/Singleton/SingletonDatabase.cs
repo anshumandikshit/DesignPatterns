@@ -12,15 +12,22 @@ namespace DesignPatterns.Singleton
 
         private Dictionary<string, int> cities;
 
+        //These will be used at the time of unittesting to check how many instance is getting created ;
+        private static int instanceCount;
+        public static int InstanceCount => instanceCount;
+
         //Creating a static property so that this can only create one instance ultimately
-        private static SingletonDatabase instance = new SingletonDatabase();
+        private static Lazy<SingletonDatabase> instance = new Lazy<SingletonDatabase>(()=> new SingletonDatabase());
 
         //And that instance will be exposed to the outer environement by using this property
-        public static SingletonDatabase Instance => instance;
+        public static SingletonDatabase Instance => instance.Value;
        
         private SingletonDatabase()
         {
             //Creating a dummy database sample in terms of cities
+
+            //this will be useful to create the unittest cases 
+            instanceCount++;
 
             cities = new Dictionary<string, int>();
             cities.Add("bhubaneswar", 1234);
