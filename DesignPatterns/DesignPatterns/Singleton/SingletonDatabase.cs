@@ -7,7 +7,7 @@ namespace DesignPatterns.Singleton
     public class SingletonDatabase : IDatabase
     {
         //For a singleton class  the class must be instantiated only once
-        //so better approach is to create rivate constructor and then expoe the class in terms of static field .
+        //so better approach is to create private constructor and then expose the class in terms of static field .
 
 
         private Dictionary<string, int> cities;
